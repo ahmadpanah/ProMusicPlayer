@@ -321,6 +321,21 @@ public class MainActivity extends AppCompatActivity implements SongChangeListene
                 playPauseImg.setImageResource(R.drawable.play_icon);
 
                 playerSeekBar.setProgress(0);
+
+                //When the music is over, play the next music.
+                int nextSongListPosition = currentSongListPosition + 1;
+
+                if (nextSongListPosition >= musicLists.size()) {
+                    nextSongListPosition = 0;
+                }
+
+                musicLists.get(currentSongListPosition).setPlaying(false);
+                musicLists.get(nextSongListPosition).setPlaying(true);
+
+                musicAdapter.updateList(musicLists);
+
+                musicRecyclerView.scrollToPosition(nextSongListPosition);
+                onChanged(nextSongListPosition);
             }
         });
     }
