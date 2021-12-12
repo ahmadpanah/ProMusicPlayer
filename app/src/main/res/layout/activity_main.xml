@@ -94,7 +94,7 @@
                 android:layout_toStartOf="@id/endTime"
                 android:layout_toEndOf="@id/startTime"
                 android:max="100"
-                android:progress="50"
+                android:progress="0"
                 android:progressDrawable="@drawable/custom_seekbar"
                 android:thumb="@drawable/custom_thumb" />
 
